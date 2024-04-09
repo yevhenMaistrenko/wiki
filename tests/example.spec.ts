@@ -24,7 +24,7 @@ test(`search for an article`, async ({ basePage }) => {
 });
 
 test(
-  `create new account`,
+  `verify validation messages for new account page`,
   {
     tag: ["@unstable"],
     annotation: [
