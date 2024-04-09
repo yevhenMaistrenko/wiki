@@ -13,8 +13,8 @@ export class BasePage {
   constructor(page: Page) {
     this.page = page;
     this.searchInput = page.getByPlaceholder("Search Wikipedia");
-    this.loginButton = page.getByRole("link", { name: "Log in" });
-    this.createAccountButton = page.getByRole("link", { name: "Create account" });
+    this.loginButton = page.locator("#pt-login-2");
+    this.createAccountButton = page.locator("#pt-createaccount-2");
     this.mainMenuButton = page.getByLabel("Main menu");
   }
 
@@ -35,7 +35,6 @@ export class BasePage {
 
     await this.searchInput.fill(text);
     await this.searchOption.first().click();
-    await expect(this.page.locator("#firstHeading")).toContainText("Playwright (software)");
   }
 
   async chooseMenuItem(text: string) {

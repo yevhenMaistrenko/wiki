@@ -14,13 +14,13 @@ export class LoginPage extends BasePage {
   constructor(page: Page) {
     super(page);
     this.page = page;
-    this.userNameField = page.getByPlaceholder("Enter your username");
-    this.passwordField = page.getByPlaceholder("Enter your password");
+    this.userNameField = page.locator("#wpName1");
+    this.passwordField = page.locator("#wpPassword1");
     this.loginButton = page.locator("#wpLoginAttempt");
     this.loginForm = page.locator("#userloginForm");
     this.rememberMeCheckbox = page.locator("#wpRemember");
   }
-
+  
   async login(username: string, password: string) {
     await this.userNameField.fill(username);
     await this.passwordField.fill(password);

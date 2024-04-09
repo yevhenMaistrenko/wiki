@@ -20,6 +20,7 @@ test(`login with invalid credentials`, async ({ basePage, loginPage }) => {
 test(`search for an article`, async ({ basePage }) => {
   await basePage.goto(data.baseURL);
   await basePage.search(data.articleName);
+  await expect(basePage.page.url()).toEqual(data.pageURL);
 });
 
 test(
